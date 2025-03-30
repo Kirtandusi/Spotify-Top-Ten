@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import SpotifyWebApi from 'spotify-web-api-node';
 import styles from './name.module.css';
-import useAuth from './useAuth'; // Import the useAuth hook
 import Logout from './Logout';
+require('dotenv').config();
 const spotifyApi = new SpotifyWebApi({
-  clientId: '18df2aee78534bc7b3b6ea6c07e624cd',
+  clientId: process.env.CLIENT_ID,
 });
 
 export default function TopTracks({ access_token }) {
